@@ -273,6 +273,44 @@
             padding: 20px;
             text-align: center;
         }
+        .ready-link {
+    color: crimson;
+    list-style: none;
+    text-align: center;
+    margin: 30px 0;
+    border: 2px solid crimson;
+    padding: 15px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    animation: pulse-border 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.ready-link:hover {
+    background-color: crimson;
+    color: white;
+    transform: scale(1.05);
+}
+
+.ready-link a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@keyframes pulse-border {
+    0% {
+        border-color: crimson;
+        box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.7);
+    }
+    50% {
+        border-color: #ff6b6b;
+        box-shadow: 0 0 0 10px rgba(220, 20, 60, 0);
+    }
+    100% {
+        border-color: crimson;
+        box-shadow: 0 0 0 0 rgba(220, 20, 60, 0);
+    }
+}
     </style>
 </head>
 <body>
@@ -362,11 +400,11 @@
             </p>
         </div>
         
-        <li style="color: crimson; list-style: none; text-align: center; margin: 30px 0;">
-            <a href="main.html" style="color: crimson;">
-                <strong>CLICK IF YOU ARE READY !!</strong>
-            </a>
-        </li>
+       <li class="ready-link">
+    <a href="main.html">
+        <strong>CLICK IF YOU ARE READY !!</strong>
+    </a>
+</li>
     </main>
 
     <footer>
