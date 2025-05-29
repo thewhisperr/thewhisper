@@ -80,6 +80,7 @@
         }
 
         @media (max-width: 400px) {
+
             .profile-picture {
                 width: 80px;
                 height: 80px;
@@ -149,7 +150,7 @@
         }
 
         footer {
-            background-color: rgb(92, 122, 86);
+            background-color: rgb(0, 0, 0);
             padding: 20px;
             text-align: center;
             color: white;
@@ -170,8 +171,9 @@
             margin: 10px 0;
         }
 
-       
+        /* Mobile responsive adjustments */
         @media (max-width: 768px) {
+
             .vids {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -256,7 +258,7 @@
             border-radius: 0 8px 8px 0;
         }
 
-       
+        /* Mobile specific improvements */
         @media (max-width: 768px) {
             .chapter1, .chapter2, .chapter3, .chapter4, .other-items {
                 padding: 16px;
@@ -305,6 +307,7 @@
     </header>
     
     <main>
+
         <h1 style="text-align: center;color: rgb(41, 35, 28);"><strong>GRAPH THEORY</strong></h1>
         <div class="menu-container">
             <ul class="menu-list">
@@ -315,12 +318,10 @@
             </ul>
         </div>
 
-        
         <section id="documents" class="content-section">
             <h2 >Documents</h2>
 
-            <p><a href="https://drive.google.com/drive/folders/1vJQrGdX4EQ1ff1wioXbfsKgsxKbXUdJ6?usp=sharing" target="_blank"> Here you'll find all the algebra documents and study materials.</a></p>
-             
+            <p><a href="https://drive.google.com/drive/folders/1vJQrGdX4EQ1ff1wioXbfsKgsxKbXUdJ6?usp=sharing" target="_blank"  style="color: aliceblue; "> Here you'll find all the graph documents and study materials.</a></p>
 
         </section>
 
@@ -329,33 +330,24 @@
             
             <div class="vids">
 
-            <ul class="chapter1">
-              <h3>Chapter 1</h3>
-                <li><strong>15 min math</strong></li>
-                <li><strong>Asma kefkef</strong></li>
-                <li><strong>exo 7</strong></li>
-
-            </ul>
+           
                
-            <ul class="chapter2">
-                 <h3>Chapter 2</h3>
-                 <li><strong>15 min math</strong></li>
-                <li><strong>Asma kefkef</strong></li>
-                <li><strong>exo 7</strong></li>
+            <ul class="chapter1">
+                 <h3>BASICS</h3>
+                 <li><a href="https://youtu.be/G9IeWJHQkZM?si=5tgsH-2gsamGje-i"style="color: aliceblue; " ><strong style="color: aliceblue; ">concepts</strong></a></li>
+                
             </ul>
-                 
-            <ul class="chapter3">
-                <h3>Chapter 3</h3>
-                <li><strong>15 min math</strong></li>
-                <li><strong>Asma kefkef</strong></li>
-                <li><strong>exo 7</strong></li>
+                <ul class="chapter2">
+                <h3> coloring </h3>
+                <li><a href="https://youtu.be/vGjsi8NIpSE?si=CvJUZh_w4jfMhZqk" style="color: aliceblue; "><strong style="color: aliceblue; "> greedy coloring algorithm </strong></a></li>
+                <li><a href="https://youtu.be/CQIW2mLfG04?si=LzZ4tD9jpgo6jt6h"style="color: aliceblue; " ><strong style="color: aliceblue; ">Welsh-Powell algorithm</strong></a></li> 
             </ul>
 
-            <ul class="chapter4">
-                <h3>Chapter 4</h3>
-                <li><strong>15 min math</strong></li>
-                <li><strong>Asma kefkef</strong></li>
-                <li><strong>exo 7</strong></li>
+            <ul class="chapter3">
+                <h3> shortest path algorithm </h3>
+                <li><a href="https://youtu.be/obWXjtg0L64?si=JOUU7bD4Pi-8VH1p" style="color: aliceblue; "><strong style="color: aliceblue; ">bellman ford</strong></a></li>
+                <li><strong><a href="https://youtu.be/_lHSawdgXpI?si=4ZEB8g0U3kYmG-WE" style="color: aliceblue; ">Dijkstra</a></strong></li>
+                <li><strong><a href="https://youtu.be/4OQeCuLYj-4?si=spI2LBYVJm_ndwZf" style="color: aliceblue; ">Floyd–Warshall</a></strong></li>
             </ul>
 
            </div>
@@ -389,7 +381,7 @@
             const menuItems = document.querySelectorAll('.menu-list li');
             const contentSections = document.querySelectorAll('.content-section');
             
-          
+            // Show first section by default
             if (contentSections.length > 0) {
                 contentSections[0].classList.add('active');
                 menuItems[0].classList.add('active');
@@ -399,10 +391,11 @@
                 item.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
                     
+                    // Remove active class from all menu items and sections
                     menuItems.forEach(i => i.classList.remove('active'));
                     contentSections.forEach(section => section.classList.remove('active'));
                     
-                    
+                    // Add active class to clicked menu item and corresponding section
                     this.classList.add('active');
                     document.getElementById(targetId).classList.add('active');
                 });
