@@ -1,27 +1,29 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyHelp - Hello I'm Whisper!</title>
     <style>
         body {
-             background: linear-gradient(to bottom, #010906 ,  rgb(92, 122, 86));
+            background: linear-gradient(to bottom, #010906, rgb(92, 122, 86));
+            margin: 0;
+            padding: 0;
         }
+        
         header nav {
-       display: flex;
-    align-items: center;  
-    gap: 30px;            
-    justify-content: space-between; 
-}
+            display: flex;
+            align-items: center;  
+            gap: 30px;            
+            justify-content: space-between; 
+        }
 
         h1{
-            color:  #007876;
-            text-shadow: 0 0 5px   #007876, 0 0 10px   #007876
+            color: #007876;
+            text-shadow: 0 0 5px #007876, 0 0 10px #007876;
         }
-         nav ul {
-            
+        
+        nav ul {
             color: #007876;
             text-shadow: 0 0 10px #007876, 0 0 20px #007876;
             margin: 0;
@@ -37,7 +39,6 @@
         }
 
         nav a {
-
             color: #007876;
             text-shadow: 0 0 10px #007876, 0 0 20px #007876;
             text-decoration: none;
@@ -50,254 +51,343 @@
         nav a:hover {
             background-color: #f0f0f0;
         }
-.intro-section {
-  display: flex;
-  justify-content: flex-start;
-  margin: 20px;
-  gap: 10px; 
-  align-items: center;
-}
-.intro-section .title {
-  margin-right: 10px; /* controls space between text and image */
-}
+        
+        .intro-section {
+            display: flex;
+            justify-content: flex-start;
+            margin: 20px;
+            gap: 10px; 
+            align-items: center;
+        }
+        
+        .intro-section .title {
+            margin-right: 10px;
+        }
 
-.goal-section  {
-  display: flex;
-  align-items: center;  /* vertically center items */
-  justify-content: flex-start;  /* align items left */
-  gap: 20px;  /* space between image and text */
-  margin: 20px;
-  flex-wrap: nowrap;  /* prevent stacking */
-}
+        .goal-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            margin: 20px;
+            flex-wrap: nowrap;
+        }
 
-.profile-picture {
-  width: 120px;    /* fixed size */
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 10px #f1f1f1;
-  flex-shrink: 0;  /* prevent image from shrinking */
-}
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 10px #f1f1f1;
+            flex-shrink: 0;
+        }
 
-.logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
 
-/* Responsive text container to wrap inside available space */
-.title {
-  flex-grow: 1;
-  min-width: 0; /* important for text wrapping inside flex */
-}
+        .title {
+            flex-grow: 1;
+            min-width: 0;
+        }
 
+        @media (max-width: 400px) {
+            .profile-picture {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        main {
+            padding: 20px 30px;
+            color: #a7a7a7;
+            font-family: Arial, sans-serif;
+        }
 
-@media (max-width: 400px) {
-  .profile-picture {
-    width: 80px;
-    height: 80px;
-  }
-}
-main {
-  padding: 20px 30px;
-  color: #a7a7a7;
-  font-family: Arial, sans-serif;
-}
+        main h2 {
+            color: #007876;
+            text-shadow: 0 0 8px #007876;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
 
-main h2 {
-  color: #007876;
-  text-shadow: 0 0 8px #007876;
-  margin-top: 30px;
-  font-size: 1.5em;
-}
+        main ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
 
-main ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
+        main li {
+            margin-bottom: 8px;
+        }
+        
+        /* IMPROVED CARD STYLES */
+        .card {
+            display: flex;
+            background-color: #03100a;
+            color: #a7a7a7;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00787655;
+            margin: 30px 20px;
+            overflow: hidden;
+            min-height: 200px;
+        }
 
-main li {
-  margin-bottom: 8px;
-}
-.card {
-  display: flex;
-  background-color: #03100a;
-  color: #a7a7a7;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #00787655;
-  margin: 30px;
-  overflow: hidden;
-  flex-wrap: wrap;
-}
+        .card.reverse {
+            flex-direction: row-reverse;
+        }
 
-.card.reverse {
-  flex-direction: row-reverse;
-}
+        .card-image {
+            flex: 0 0 300px; /* Fixed width, no grow/shrink */
+            min-height: 200px;
+        }
 
-.card-image {
-  flex: 1;
-  min-width: 200px;
-  max-width: 300px;
-}
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+        .card-text {
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0; /* Allow text to wrap properly */
+        }
 
-.card-text {
-  flex: 2;
-  padding: 20px;
-}
+        .card-text h2 {
+            color: #00b3b1;
+            text-shadow: 0 0 10px #007876;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
 
-.card-text h2 {
-  color: #00b3b1;
-  text-shadow: 0 0 10px #007876;
-  font-size: 1.6em;
-  margin-bottom: 15px;
-}
+        .card-text ul {
+            padding-left: 20px;
+            margin: 0;
+        }
 
-.card-text ul {
-  padding-left: 20px;
-}
+        .card-text li {
+            margin-bottom: 10px;
+        }
 
-.card-text li {
-  margin-bottom: 10px;
-}
+        /* RESPONSIVE BREAKPOINTS */
+        
+        /* Tablet styles */
+        @media (max-width: 768px) {
+            .card {
+                margin: 20px 15px;
+            }
+            
+            .card-image {
+                flex: 0 0 250px;
+            }
+            
+            .card-text {
+                padding: 20px;
+            }
+            
+            .card-text h2 {
+                font-size: 1.4em;
+            }
+        }
 
-.mission-message {
-  color: #688d8c;
-  margin: 40px 30px;
-  font-size: 1.1em;
-}
-footer{
-    background-color: rgb(92, 122, 86);
-}
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            .card {
+                flex-direction: column !important; /* Stack vertically on mobile */
+                margin: 15px 10px;
+            }
+            
+            .card.reverse {
+                flex-direction: column !important; /* Override reverse on mobile */
+            }
+            
+            .card-image {
+                flex: none;
+                width: 100%;
+                height: 200px;
+                order: 1; /* Image always goes first on mobile */
+            }
+            
+            .card-text {
+                order: 2; /* Text always goes second on mobile */
+                padding: 20px;
+            }
+            
+            .card-text h2 {
+                font-size: 1.3em;
+                text-align: center;
+            }
+            
+            main {
+                padding: 15px;
+            }
+        }
 
+        /* Very small mobile styles */
+        @media (max-width: 400px) {
+            .card {
+                margin: 10px 5px;
+            }
+            
+            .card-text {
+                padding: 15px;
+            }
+            
+            .card-text h2 {
+                font-size: 1.2em;
+            }
+            
+            .card-image {
+                height: 180px;
+            }
+            
+            main {
+                padding: 10px;
+            }
+        }
 
+        .mission-message {
+            color: #688d8c;
+            margin: 40px 30px;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 600px) {
+            .mission-message {
+                margin: 30px 15px;
+                font-size: 1em;
+            }
+        }
+        
+        footer {
+            background-color: rgb(92, 122, 86);
+            padding: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-             <h1><strong>Whisper</strong></h1>
+            <h1><strong>Whisper</strong></h1>
             <ul>
-               
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-           
         </nav> 
          
         <div class="intro-section">
             <div class="title">
-             <h1>WHO AM I ?</h1>
-             <p style="color: #a7a7a7;">I'm Whisper,a cybersecurity student </p> 
-             
-        </div>
-        <div class="profile-picture"><img src="me.jpg" alt="logo" class="logo"></div>
-        </div>
-
-             <div class="goal-section">
-            <div class="profile-picture"><img src="goal.jpg" alt="logo" class="logo"></div>
-
-            <div class="title">
-             <h1>WHAT IS MY GOAL ?</h1>
-              <p style="color: #a8aeab;"> As someone navigating the complex world of cybersecurity education,
-                I created this website to help fellow students discover quality learning resources,
-                organize their study schedules, and streamline their academic journey. </p>
-
-
+                <h1>WHO AM I ?</h1>
+                <p style="color: #a7a7a7;">I'm Whisper, a cybersecurity student</p> 
             </div>
-            
+            <div class="profile-picture"><img src="me.jpg" alt="logo" class="logo"></div>
         </div>
 
         <div class="goal-section">
- 
-  <div class="title">
-    <h1>WHAT DOES WHISPER OFFER?</h1>
-   
-</div>
- <div class="profile-picture"><img src="offer.jpg" alt="logo" class="logo"></div>
-  </div>
+            <div class="profile-picture"><img src="goal.jpg" alt="logo" class="logo"></div>
+            <div class="title">
+                <h1>WHAT IS MY GOAL ?</h1>
+                <p style="color: #a8aeab;">As someone navigating the complex world of cybersecurity education,
+                I created this website to help fellow students discover quality learning resources,
+                organize their study schedules, and streamline their academic journey.</p>
+            </div>
+        </div>
 
-<main>
-<div class="card">
-  <div class="card-image">
-    <img src="2.jpg" alt="Tools Image">
-  </div>
-  <div class="card-text">
-    <h2>Special Educational Tools</h2>
-    <ul>
-      <li>Exercise solving from images with step-by-step explanations.</li>
-      <li>Tool to graph mathematical functions easily.</li>
-      <li>Online code compiler to write and test code on the website.</li>
-    </ul>
-  </div>
-</div>
+        <div class="goal-section">
+            <div class="title">
+                <h1>WHAT DOES WHISPER OFFER?</h1>
+            </div>
+            <div class="profile-picture"><img src="offer.jpg" alt="logo" class="logo"></div>
+        </div>
+    </header>
 
-<div class="card reverse">
-  <div class="card-image">
-    <img src="1.jpg" alt="Content Image">
-  </div>
-  <div class="card-text">
-    <h2>Available Content</h2>
-    <ul>
-      <li>PDF lessons covering various academic subjects in an organized way.</li>
-      <li>Solved exercises to help students understand problem-solving techniques.</li>
-      <li>Interactive quizzes for self-assessment and revision.</li>
-    </ul>
-  </div>
-</div>
+    <main>
+        <div class="card">
+            <div class="card-image">
+                <img src="2.jpg" alt="Tools Image">
+            </div>
+            <div class="card-text">
+                <h2>Special Educational Tools</h2>
+                <ul>
+                    <li>Exercise solving from images with step-by-step explanations.</li>
+                    <li>Tool to graph mathematical functions easily.</li>
+                    <li>Online code compiler to write and test code on the website.</li>
+                </ul>
+            </div>
+        </div>
 
- <div class="card">
-  <div class="card-image">
-    <img src="me.jpg" alt="Features Image">
-  </div>
-  <div class="card-text">
-    <h2>Website Features</h2>
-    <ul>
-      <li>Simple and user-friendly design.</li>
-      <li>Content tailored for students at all levels.</li>
-      <li>A personal educational initiative to share knowledge.</li>
-      <li>Completely free and accessible without registration.</li>
-    </ul>
-  </div>
-</div>
+        <div class="card reverse">
+            <div class="card-image">
+                <img src="1.jpg" alt="Content Image">
+            </div>
+            <div class="card-text">
+                <h2>Available Content</h2>
+                <ul>
+                    <li>PDF lessons covering various academic subjects in an organized way.</li>
+                    <li>Solved exercises to help students understand problem-solving techniques.</li>
+                    <li>Interactive quizzes for self-assessment and revision.</li>
+                </ul>
+            </div>
+        </div>
 
-<div class="mission-message">
-  <p>
-    We believe that learning becomes easier when the content is clear and tools are accessible. 
-    Enjoy a flexible and helpful learning experience with <strong>WHISPER</strong>!
-  </p>
-  
-</div>
-</main>
- <li style="color: crimson;"><a href="main.html" style="color: crimson;"><strong>CLICK IF YOU ARE READY !!</strong> </a></li>
-</header>
+        <div class="card">
+            <div class="card-image">
+                <img src="me.jpg" alt="Features Image">
+            </div>
+            <div class="card-text">
+                <h2>Website Features</h2>
+                <ul>
+                    <li>Simple and user-friendly design.</li>
+                    <li>Content tailored for students at all levels.</li>
+                    <li>A personal educational initiative to share knowledge.</li>
+                    <li>Completely free and accessible without registration.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mission-message">
+            <p>
+                We believe that learning becomes easier when the content is clear and tools are accessible. 
+                Enjoy a flexible and helpful learning experience with <strong>WHISPER</strong>!
+            </p>
+        </div>
+        
+        <li style="color: crimson; list-style: none; text-align: center; margin: 30px 0;">
+            <a href="main.html" style="color: crimson;">
+                <strong>CLICK IF YOU ARE READY !!</strong>
+            </a>
+        </li>
+    </main>
+
     <footer>
         <p>📚 StudyHelp &copy; 2025 — Helping Students Learn and Grow</p>
         <p>Contact: <a href="mailto:oumaimo284@gmail.com">oumaimo284@gmail.com</a></p>
         <p>Instagram: <a href="https://instagram.com/hamssa_be" target="_blank">hamssa_be</a></p>
     </footer>
+    
     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JxuxCmRUOi5fAMnfIYJ4C";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JxuxCmRUOi5fAMnfIYJ4C";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 
-<script>
-  function toggleSubjects(id) {
-    const section = document.getElementById(id);
-    if (section.style.display === "none" || section.style.display === "") {
-      section.style.display = "flex";
-    } else {
-      section.style.display = "none";
-    }
-  }
-</script>
-
+    <script>
+        function toggleSubjects(id) {
+            const section = document.getElementById(id);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "flex";
+            } else {
+                section.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
