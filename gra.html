@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHelp - Hello I'm Whisper!</title>
+    <style>
+
+        body {
+           background-color: black;
+            padding: 0;
+            margin: 0;
+            direction: ltr;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+       
+        header nav {
+            display: flex;
+            align-items: center;  
+            gap: 30px;            
+            justify-content: space-between; 
+        }
+
+        h1 {
+            color:  #007876;
+            text-shadow: 0 0 5px   #007876, 0 0 10px   #007876
+        }
+        
+        nav ul {
+            color: #007876;
+            text-shadow: 0 0 10px #007876, 0 0 20px #007876;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: #007876;
+            text-shadow: 0 0 10px #007876, 0 0 20px #007876;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 10px #f1f1f1;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .title {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        @media (max-width: 400px) {
+            .profile-picture {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        main {
+            padding: 20px 30px;
+            color: #a7a7a7;
+            font-family: Arial, sans-serif;
+            flex: 1;
+        }
+
+        main h2 {
+            color: #007876;
+            text-shadow: 0 0 8px #007876;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        
+        .menu-container {
+            background: linear-gradient(to bottom,#2a4848,  #c8c8c812 );
+            padding: 16px;
+           
+            border-radius: 12px;
+            margin: 0;
+        }
+
+        .menu-list {
+             color: rgba(167, 157, 147, 0.737);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-list li {
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-list li:hover {
+            background-color: rgba(146, 185, 184, 0.2);
+        }
+
+        .menu-list li.active {
+            background-color: rgba(146, 185, 184, 0.2);
+        }
+
+        .content-section {
+             background: linear-gradient(to bottom,  #c8c8c812 , black);
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            padding: auto;
+            border-radius: 12px;
+            color: bisque;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        footer {
+            background-color: rgb(92, 122, 86);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer a {
+            color: #007876;
+            text-decoration: none;
+        }
+        .vids{
+            display: flex;
+            padding: 0px;
+            color: #a7a7a7;
+            border-radius: 12px;
+            margin: 15px;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+    .chapter1 , .chapter2 , .chapter3 , .chapter4 , .other-items {
+        list-style-type: none;
+        display: block;
+        background: linear-gradient(to bottom,#2a4848,  #c8c8c812 );
+        color: #a7a7a7;
+        border-radius: 12px;
+        box-shadow: 0 0 15px #00787655;
+        margin: 30px;
+        overflow: hidden;
+        flex-wrap: wrap;
+        padding: 16px;
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><strong>Whisper</strong></h1>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav> 
+    </header>
+    
+    <main>
+        <h1 style="text-align: center;color: rgb(41, 35, 28);"><strong>GRAPH THEORY</strong></h1>
+        <div class="menu-container">
+            <ul class="menu-list">
+                <li data-target="documents"><strong>Documents</strong></li>
+                <li data-target="videos"><strong>Videos</strong></li>
+                <li data-target="contact"><strong>Contact</strong></li>
+                <li data-target="qcms"><strong>QCMs</strong></li>
+                <li data-target="tools"><strong>Tools</strong></li>
+            </ul>
+        </div>
+
+        
+        <section id="documents" class="content-section">
+            <h2 >Documents</h2>
+
+            <p>Here you'll find all the algebra documents and study materials.</p>
+             
+
+        </section>
+
+        <section id="videos" class="content-section">
+            <h2 style="text-align: center;">Videos</h2>
+            
+            <div class="vids">
+
+            <ul class="chapter1">
+              <h3 style="color: #f0f0f0;">chapter 1 : </h3>
+                <li ><strong>15 min math</strong></li>
+                <li ><strong>Asma kefkef</strong></li>
+                <li ><strong>exo 7  </strong></li>
+
+            </ul>
+               
+            <ul class="chapter2">
+                 <h3 style="color: #f0f0f0;">chapter 2 :</h3>
+                 <li ><strong>15 min math</strong></li>
+                <li ><strong>Asma kefkef</strong></li>
+                <li ><strong>exo 7</strong></li>
+            </ul>
+                 
+            <ul class="chapter3">
+                <h3 style="color: #f0f0f0;">chapter 3 :</h3>
+                <li ><strong>15 min math</strong></li>
+                <li ><strong>Asma kefkef</strong></li>
+                <li ><strong>exo 7</strong></li>
+            </ul>
+
+            <ul class="chapter4">
+                <h3 style="color: #f0f0f0;">chapter 4 :</h3>
+                <li ><strong>15 min math</strong></li>
+                <li ><strong>Asma kefkef</strong></li>
+                <li ><strong>exo 7</strong></li>
+            </ul>
+
+           </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2 >Contact</h2>
+            <p>not available :( </p>
+            
+        </section>
+
+        <section id="qcms" class="content-section">
+            <h2 >QCMs</h2>
+            <p>Multiple choice questions to test your algebra knowledge.</p>
+            
+        </section>
+
+        <section id="tools" class="content-section">
+            <h2 >Tools</h2>
+               
+            <div class="other-items">
+            <div ><a href="https://www.gauthmath.com/" target="_blank" style="color: aliceblue; "> exercices solver <br></a></div>
+            <div><a href="https://www.desmos.com/calculator?lang=fr" target="_blank"  style="color: aliceblue; "> functions graph </a></div>
+            </div>
+           
+        </section>
+    </main>
+
+    <footer>
+        <p>📚 StudyHelp &copy; 2025 — Helping Students Learn and Grow</p>
+        <p>Contact: <a href="mailto:oumaimo284@gmail.com">oumaimo284@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/hamssa_be" target="_blank">hamssa_be</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.menu-list li');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            // Show first section by default
+            if (contentSections.length > 0) {
+                contentSections[0].classList.add('active');
+                menuItems[0].classList.add('active');
+            }
+            
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove active class from all menu items and sections
+                    menuItems.forEach(i => i.classList.remove('active'));
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked menu item and corresponding section
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
