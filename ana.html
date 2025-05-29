@@ -170,7 +170,7 @@
             margin: 10px 0;
         }
 
-        /* Mobile responsive adjustments */
+     
         @media (max-width: 768px) {
             .vids {
                 grid-template-columns: 1fr;
@@ -256,7 +256,7 @@
             border-radius: 0 8px 8px 0;
         }
 
-        /* Mobile specific improvements */
+      
         @media (max-width: 768px) {
             .chapter1, .chapter2, .chapter3, .chapter4, .other-items {
                 padding: 16px;
@@ -389,7 +389,7 @@
             const menuItems = document.querySelectorAll('.menu-list li');
             const contentSections = document.querySelectorAll('.content-section');
             
-            // Show first section by default
+          
             if (contentSections.length > 0) {
                 contentSections[0].classList.add('active');
                 menuItems[0].classList.add('active');
@@ -399,11 +399,11 @@
                 item.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
                     
-                    // Remove active class from all menu items and sections
+                    
                     menuItems.forEach(i => i.classList.remove('active'));
                     contentSections.forEach(section => section.classList.remove('active'));
                     
-                    // Add active class to clicked menu item and corresponding section
+                  
                     this.classList.add('active');
                     document.getElementById(targetId).classList.add('active');
                 });
