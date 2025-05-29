@@ -159,30 +159,138 @@
             color: #007876;
             text-decoration: none;
         }
+        
         .vids{
-            display: flex;
-            padding: 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 10px;
             color: #a7a7a7;
             border-radius: 12px;
-            gap: 10px;
-            justify-content: center;
-            margin: 10px;
-            overflow: hidden;
-            flex-wrap: wrap;
+            margin: 10px 0;
         }
-    .chapter1 , .chapter2 , .chapter3 , .chapter4 , .other-items {
-        list-style-type: none;
-        display: block;
-        background: linear-gradient(to bottom,#2a4848,  #c8c8c812 );
-        color: #a7a7a7;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #00787655;
-        margin: 20px ;
-        overflow: hidden;
-        flex-wrap: wrap;
-        padding: 16px;
 
-}
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .vids {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 5px;
+                margin: 10px 0;
+            }
+            
+            main {
+                padding: 15px 20px;
+            }
+            
+            .menu-list {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+            
+            .menu-list li {
+                flex: 1;
+                min-width: 80px;
+                padding: 6px 8px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vids {
+                gap: 12px;
+                padding: 5px;
+            }
+            
+            main {
+                padding: 10px 15px;
+            }
+            
+            .menu-list li {
+                padding: 5px 6px;
+                font-size: 0.8em;
+            }
+        }
+        
+        .chapter1, .chapter2, .chapter3, .chapter4, .other-items {
+            list-style-type: none;
+            display: block;
+            background: linear-gradient(to bottom, #2a4848, #c8c8c812);
+            color: #a7a7a7;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00787655;
+            margin: 0;
+            overflow: hidden;
+            padding: 20px;
+            min-height: 140px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .chapter1:hover, .chapter2:hover, .chapter3:hover, .chapter4:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px #00787699;
+        }
+
+        .chapter1 h3, .chapter2 h3, .chapter3 h3, .chapter4 h3 {
+            color: #f0f0f0;
+            margin: 0 0 15px 0;
+            font-size: 1.2em;
+            border-bottom: 2px solid #007876;
+            padding-bottom: 8px;
+        }
+
+        .chapter1 li, .chapter2 li, .chapter3 li, .chapter4 li {
+            padding: 8px 0;
+            border-left: 3px solid transparent;
+            padding-left: 12px;
+            margin: 5px 0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .chapter1 li:hover, .chapter2 li:hover, .chapter3 li:hover, .chapter4 li:hover {
+            border-left: 3px solid #007876;
+            color: #fff;
+            background-color: rgba(0, 120, 118, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Mobile specific improvements */
+        @media (max-width: 768px) {
+            .chapter1, .chapter2, .chapter3, .chapter4, .other-items {
+                padding: 16px;
+                min-height: 120px;
+            }
+            
+            .chapter1 h3, .chapter2 h3, .chapter3 h3, .chapter4 h3 {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+            
+            .chapter1 li, .chapter2 li, .chapter3 li, .chapter4 li {
+                padding: 6px 0;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chapter1, .chapter2, .chapter3, .chapter4, .other-items {
+                padding: 12px;
+                min-height: 100px;
+            }
+            
+            .chapter1 h3, .chapter2 h3, .chapter3 h3, .chapter4 h3 {
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+            
+            .chapter1 li, .chapter2 li, .chapter3 li, .chapter4 li {
+                padding: 5px 0;
+                font-size: 0.85em;
+                padding-left: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -211,7 +319,7 @@
         <section id="documents" class="content-section">
             <h2 >Documents</h2>
 
-            <p><a href="https://drive.google.com/drive/folders/1NYG6Yaw48Nk84bKx9QhIkWOIMvGDs_DF?usp=sharing" target="_blank">Here you'll find all the algebra documents and study materials.</a></p>
+            <p><a href="https://drive.google.com/drive/folders/1vJQrGdX4EQ1ff1wioXbfsKgsxKbXUdJ6?usp=sharing" target="_blank"> Here you'll find all the algebra documents and study materials.</a></p>
              
 
         </section>
@@ -222,32 +330,32 @@
             <div class="vids">
 
             <ul class="chapter1">
-              <h3 style="color: #f0f0f0;">chapter 1 : </h3>
-                <li ><strong>15 min math</strong></li>
-                <li ><strong>Asma kefkef</strong></li>
-                <li ><strong>exo 7  </strong></li>
+              <h3>Chapter 1</h3>
+                <li><strong>15 min math</strong></li>
+                <li><strong>Asma kefkef</strong></li>
+                <li><strong>exo 7</strong></li>
 
             </ul>
                
             <ul class="chapter2">
-                 <h3 style="color: #f0f0f0;">chapter 2 :</h3>
-                 <li ><strong>15 min math</strong></li>
-                <li ><strong>Asma kefkef</strong></li>
-                <li ><strong>exo 7</strong></li>
+                 <h3>Chapter 2</h3>
+                 <li><strong>15 min math</strong></li>
+                <li><strong>Asma kefkef</strong></li>
+                <li><strong>exo 7</strong></li>
             </ul>
                  
             <ul class="chapter3">
-                <h3 style="color: #f0f0f0;">chapter 3 :</h3>
-                <li ><strong>15 min math</strong></li>
-                <li ><strong>Asma kefkef</strong></li>
-                <li ><strong>exo 7</strong></li>
+                <h3>Chapter 3</h3>
+                <li><strong>15 min math</strong></li>
+                <li><strong>Asma kefkef</strong></li>
+                <li><strong>exo 7</strong></li>
             </ul>
 
             <ul class="chapter4">
-                <h3 style="color: #f0f0f0;">chapter 4 :</h3>
-                <li ><strong>15 min math</strong></li>
-                <li ><strong>Asma kefkef</strong></li>
-                <li ><strong>exo 7</strong></li>
+                <h3>Chapter 4</h3>
+                <li><strong>15 min math</strong></li>
+                <li><strong>Asma kefkef</strong></li>
+                <li><strong>exo 7</strong></li>
             </ul>
 
            </div>
